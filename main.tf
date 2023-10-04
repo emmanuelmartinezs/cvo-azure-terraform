@@ -2,11 +2,11 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = "2.45.1"
+      version = "3.75.0"
     }
     netapp-cloudmanager = {
       source = "NetApp/netapp-cloudmanager"
-      version = "20.12.3"
+      version = "23.8.1"
     }
   }
 }

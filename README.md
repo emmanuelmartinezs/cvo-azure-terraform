@@ -1,4 +1,5 @@
 # NetApp CVO - Terraform
+![name-of-you-image](https://github.com/emmanuelmartinezs/cvo-azure-terraform/blob/main/Resources/Images/hcl.png?raw=true)
 ## netapp-cloudmanager Provider
 The netapp-cloudmanager provider is used to interact with NetApp Cloud Manager in order to create and manage Cloud Volumes ONTAP in AWS, Azure, and GCP. The provider needs to be configured with the proper credentials before it can be used.
 

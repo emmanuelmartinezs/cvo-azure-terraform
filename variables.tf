@@ -1,5 +1,5 @@
 variable "cloudmanager_refresh_token" {
-    default = "" #Your refresh token here
+    default = "xa4x5QW1poKyzc7QrCurClkIhqpKXTavypKAzqLA-tB5d" #Your refresh token here
 }
 # Azure Subscription Id
 variable "azure-subscription-id" {

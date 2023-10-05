@@ -26,8 +26,8 @@ provider "netapp-cloudmanager" {
 # Azure Environment
 
 resource "azurerm_resource_group" "terraform-connector-rg" {
-  name     = "tfConnectorRG"
-  location = "eastus2"
+  name     = "TFConnectorRG"
+  location = "eastus"
 }
 
 resource "azurerm_virtual_network" "TFvnet" {
@@ -106,9 +106,9 @@ resource "netapp-cloudmanager_connector_azure" "terraform-connector" {
   vnet_id = azurerm_virtual_network.TFvnet.name
   network_security_group_name = azurerm_network_security_group.tf-connector-sg.name
   associate_public_ip_address = true
-  account_id = "account-111222"
-  admin_password = "P@ssword123"
-  admin_username = "myuser"
+  account_id = "account-46F1HgyQ"
+  admin_password = "Acc3ss2023!!"
+  admin_username = "sadmin"
 }
 
 data "azurerm_virtual_machine" "tf-connector-vm" {
@@ -238,7 +238,7 @@ resource "azurerm_role_assignment" "occm-role-assignment" {
 resource "netapp-cloudmanager_cvo_azure" "cl-azure" {
   depends_on            = [azurerm_role_assignment.occm-role-assignment]
   provider              = netapp-cloudmanager
-  name                  = "terraformCVO"
+  name                  = "TerraformHA"
   location              = azurerm_resource_group.terraform-connector-rg.location
   subscription_id       = var.azure-subscription-id
   subnet_id             = azurerm_subnet.subnet1.name
@@ -246,9 +246,9 @@ resource "netapp-cloudmanager_cvo_azure" "cl-azure" {
   vnet_resource_group   = azurerm_resource_group.terraform-connector-rg.name
   data_encryption_type  = "AZURE"
   storage_type          = "Standard_LRS"
-  svm_password          = "P@ssword123"
+  svm_password          = "Acc3ss2023!!"
   client_id             = netapp-cloudmanager_connector_azure.terraform-connector.client_id
-  workspace_id          = "workspace-111222"
+  workspace_id          = "workspace-Vu8OWLzz"
   capacity_tier         = "Blob"
   is_ha                 = true
   license_type          = "azure-ha-cot-standard-paygo"
